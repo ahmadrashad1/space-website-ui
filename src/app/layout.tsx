@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Barlow, Orbitron } from "next/font/google";
+import "bootstrap/dist/css/bootstrap-grid.min.css";
+import "bootstrap/dist/css/bootstrap-utilities.min.css";
 import "./globals.css";
 
 const barlow = Barlow({

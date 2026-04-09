@@ -9,7 +9,9 @@
   --accent-strong: #e8f5ff;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -20,10 +22,19 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-barlow), "Barlow", sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
 }
 
 body {
   min-height: 100vh;
+  overflow-x: hidden;
+}
+
+img, video, canvas {
+  max-width: 100%;
+  height: auto;
 }
 
 /* ───────────────────────── Hero ───────────────────────── */
@@ -706,10 +717,25 @@ body {
 
 /* ───────────────────────── Responsive ───────────────────────── */
 
-@media (max-width: 960px) {
-  .hero__content { padding: 6rem 1.5rem 2rem; }
+/* Large tablets / small desktops (≤ 1200px) */
+@media (max-width: 1200px) {
+  .orbit360__inner { grid-template-columns: 1fr 1.2fr; gap: 2rem; }
+  .about__inner { gap: 2.5rem; }
+  .program-card + .program-card { margin-left: -3rem; }
+}
+
+/* Tablets (≤ 991px) — Bootstrap md breakpoint */
+@media (max-width: 991.98px) {
+  .hero__content { padding: 5rem 1.5rem 2rem; }
   .hero h1, .hero__copy { width: 100%; }
-  .satellite__content { padding: 6rem 1.5rem 2rem; text-align: left; }
+  .hero h1 { font-size: clamp(2.6rem, 6vw, 4.5rem); }
+
+  .satellite--scroll-locked,
+  .mission--scroll-locked { min-height: 250vh; }
+
+  .satellite__content {
+    padding: 5rem 1.5rem 2rem; padding-left: 1.5rem; text-align: left;
+  }
   .satellite__title, .satellite__copy { max-width: 100%; }
   .satellite__actions { justify-content: flex-start; }
   .satellite__veil {
@@ -717,48 +743,142 @@ body {
       linear-gradient(90deg, rgba(2, 5, 11, 0.82) 0%, rgba(2, 5, 11, 0.4) 50%, rgba(2, 5, 11, 0.82) 100%),
       linear-gradient(180deg, rgba(2, 5, 11, 0.4) 0%, rgba(2, 5, 11, 0.2) 30%, rgba(2, 5, 11, 0.8) 100%);
   }
-  .mission__content { padding: 6rem 1.5rem 2rem; }
+
+  .mission__content { padding: 5rem 1.5rem 2rem; }
   .mission h2, .mission__copy { width: 100%; }
+
   .stats__grid { grid-template-columns: repeat(2, 1fr); }
   .about__inner { grid-template-columns: 1fr; }
   .program-card + .program-card { margin-left: -2.5rem; }
   .footer__nav { grid-template-columns: repeat(2, 1fr); }
+
   .orbit360__inner { grid-template-columns: 1fr; text-align: center; }
   .orbit360__text { align-items: center; }
   .orbit360__copy { max-width: 100%; }
   .orbit360__viewport { aspect-ratio: 4 / 3; }
 }
 
-@media (max-height: 920px) and (min-width: 961px) {
+/* Tall desktop with limited height */
+@media (max-height: 920px) and (min-width: 992px) {
   .hero h1 { font-size: clamp(2.9rem, 6.1vw, 5.6rem); }
   .hero__copy { width: min(31rem, 100%); }
 }
 
-@media (max-width: 640px) {
+/* Small tablets / large phones (≤ 767px) — Bootstrap sm breakpoint */
+@media (max-width: 767.98px) {
   .hero, .satellite, .mission { min-height: 100svh; }
+
+  .hero h1 { font-size: clamp(2.4rem, 10vw, 3.6rem); }
+  .hero__eyebrow { font-size: 0.75rem; letter-spacing: 0.28em; }
+  .hero__copy { font-size: 0.95rem; }
+  .hero__actions { flex-direction: column; }
+
+  .satellite--scroll-locked,
+  .mission--scroll-locked { min-height: 220vh; }
+
+  .satellite__title { font-size: clamp(1.8rem, 7vw, 3rem); }
+  .satellite__eyebrow { font-size: 0.75rem; }
+  .satellite__actions { flex-direction: column; }
+
+  .mission__title { font-size: clamp(2rem, 8vw, 3.2rem); }
+  .mission__eyebrow { font-size: 0.75rem; }
+  .mission__actions { flex-direction: column; }
+
+  .button { width: 100%; }
+
+  .stats { padding: clamp(3rem, 8vh, 5rem) 0; }
+  .stats__grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .stats__card { padding: 1.6rem 0.8rem; }
+  .stats__number { font-size: clamp(1.8rem, 8vw, 2.8rem); }
+
+  .about { padding: clamp(3rem, 8vh, 5rem) 0; }
+  .about__title { font-size: clamp(1.2rem, 4vw, 1.8rem); }
+
+  .programs { padding: clamp(3rem, 8vh, 5rem) 0; }
+  .programs__title { font-size: clamp(1.3rem, 5vw, 2rem); }
+  .programs__grid { padding: 0.4rem 0 1.2rem; }
+  .program-card { flex-basis: 80vw; min-height: 13.5rem; padding: 1.45rem 1.2rem; }
+  .program-card + .program-card { margin-left: -1.5rem; }
+
+  .orbit360 { padding: clamp(3rem, 8vh, 5rem) 0; }
+  .orbit360__title { font-size: clamp(1.8rem, 8vw, 2.8rem); }
+  .orbit360__viewport { aspect-ratio: 1 / 1; border-radius: 0.9rem; }
+
+  .cta { padding: clamp(3rem, 8vh, 5rem) 0; }
+  .cta__title { font-size: clamp(1.3rem, 5vw, 2rem); }
+  .cta__form { flex-direction: column; }
+  .cta__submit { width: 100%; }
+
+  .footer__nav { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .footer__bottom { flex-direction: column; text-align: center; }
+}
+
+/* Phones (≤ 575px) — Bootstrap xs breakpoint */
+@media (max-width: 575.98px) {
+  .hero__content { padding: 4rem 1rem 1.5rem; }
+  .hero h1 { font-size: clamp(2rem, 11vw, 3rem); }
+  .hero__copy { font-size: 0.9rem; line-height: 1.5; }
+
   .hero__veil {
     background:
       linear-gradient(180deg, rgba(2, 5, 11, 0.48) 0%, rgba(2, 5, 11, 0.28) 26%, rgba(2, 5, 11, 0.82) 100%),
       linear-gradient(90deg, rgba(2, 5, 11, 0.8) 0%, rgba(2, 5, 11, 0.3) 48%, rgba(2, 5, 11, 0.86) 100%);
   }
-  .hero h1, .satellite__title, .mission__title { font-size: clamp(2.8rem, 16vw, 4.5rem); }
-  .hero__actions, .satellite__actions, .mission__actions { flex-direction: column; }
-  .button { width: 100%; }
-  .stats__grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .stats__card { padding: 1.6rem 0.8rem; }
-  .programs__grid { padding: 0.4rem 0 1.2rem; }
-  .program-card { flex-basis: 84vw; min-height: 13.5rem; padding: 1.45rem 1.2rem; }
-  .program-card + .program-card { margin-left: -1.5rem; }
-  .cta__form { flex-direction: column; }
-  .cta__submit { width: 100%; }
-  .footer__nav { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-  .footer__bottom { flex-direction: column; text-align: center; }
-  .orbit360 { padding: 4rem 0; }
-  .orbit360__inner { grid-template-columns: 1fr; text-align: center; }
-  .orbit360__text { align-items: center; }
-  .orbit360__title { font-size: clamp(1.8rem, 10vw, 2.8rem); }
-  .orbit360__copy { max-width: 100%; }
-  .orbit360__viewport { aspect-ratio: 1 / 1; border-radius: 0.9rem; }
+
+  .satellite--scroll-locked,
+  .mission--scroll-locked { min-height: 200vh; }
+
+  .satellite__content { padding: 3.5rem 1rem 1.5rem; }
+  .satellite__title { font-size: clamp(1.6rem, 9vw, 2.6rem); }
+
+  .mission__content { padding: 3.5rem 1rem 1.5rem; }
+  .mission__title { font-size: clamp(1.8rem, 10vw, 2.8rem); }
+
+  .stats__inner { padding-inline: 1rem; }
+  .stats__grid { gap: 0.75rem; }
+  .stats__card { padding: 1.2rem 0.6rem; border-radius: 0.75rem; }
+  .stats__number { font-size: clamp(1.5rem, 7vw, 2.2rem); }
+  .stats__unit { font-size: 0.7rem; }
+  .stats__label { font-size: 0.8rem; }
+
+  .about__inner { padding-inline: 1rem; }
+  .about__copy { font-size: 0.9rem; }
+  .about__fact { padding: 1.2rem; }
+
+  .programs__inner { padding-inline: 1rem; }
+  .program-card { flex-basis: 85vw; min-height: 12rem; padding: 1.2rem 1rem; }
+  .program-card + .program-card { margin-left: -1rem; }
+  .program-card__name { font-size: 0.95rem; }
+  .program-card__desc { font-size: 0.85rem; }
+
+  .orbit360 { padding: 3rem 0; }
+  .orbit360__inner { padding-inline: 1rem; }
+  .orbit360__title { font-size: clamp(1.5rem, 8vw, 2.2rem); }
+  .orbit360__eyebrow { font-size: 0.75rem; }
+  .orbit360__hint { font-size: 0.7rem; }
+  .orbit360__viewport { border-radius: 0.75rem; }
+
+  .cta__inner { padding-inline: 1rem; }
+  .cta__input { padding: 0.8rem 1rem; font-size: 0.9rem; }
+
+  .footer__inner { padding-inline: 1rem; }
+  .footer__logo { font-size: 1.5rem; }
+  .footer__nav { grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  .footer__heading { font-size: 0.7rem; }
+  .footer__links a { font-size: 0.82rem; }
+}
+
+/* Very small phones (≤ 400px) */
+@media (max-width: 400px) {
+  .hero h1 { font-size: clamp(1.7rem, 12vw, 2.5rem); }
+
+  .stats__grid { grid-template-columns: 1fr; }
+
+  .program-card { flex-basis: 90vw; }
+
+  .orbit360__title { font-size: clamp(1.3rem, 9vw, 1.8rem); }
+
+  .footer__nav { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
