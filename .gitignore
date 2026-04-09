@@ -1,0 +1,9 @@
+# Build artifacts — extracted frames not used by the site
+assets/hero/_generated_frames/
+mission-extracted_frames_60fps/
+space-video-frames/
+telescope-extracted_frames_60fps/
+
+# Unused hero video variants (only v2 is referenced)
+assets/hero/hero-background.mp4
+assets/hero/hero-background.webm

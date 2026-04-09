@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NASA — Explore Space</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Orbitron:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="hero">
+      <div class="hero__media" aria-hidden="true">
+        <video
+          class="hero__video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          poster="./assets/hero/hero-poster.jpg"
+        >
+          <source src="./assets/hero/hero-background-v2.mp4" type="video/mp4" />
+        </video>
+        <div class="hero__veil"></div>
+      </div>
+
+      <section class="hero__content" id="hero-content">
+        <p class="hero__eyebrow">Beyond the atmosphere</p>
+        <h1 class="hero__title" aria-label="The universe is closer than you think.">
+          <span class="hero__title-line">The universe</span>
+          <span class="hero__title-line">is closer</span>
+          <span class="hero__title-line">than you think.</span>
+        </h1>
+        <p class="hero__copy">
+          Explore the missions, the machines, and the moments that carry
+          humanity past the sky. This is where curiosity meets the cosmos.
+        </p>
+
+        <div class="hero__actions">
+          <a class="button button--primary" href="/">Start Exploring</a>
+          <a class="button button--secondary" href="/">See What's Out There</a>
+        </div>
+      </section>
+    </main>
+
+    <section class="satellite">
+      <div class="satellite__media" aria-hidden="true">
+        <video
+          class="satellite__video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          poster="./assets/satellite/satellite-poster.jpg"
+        >
+          <source src="./assets/satellite/satellite-background.mp4" type="video/mp4" />
+        </video>
+        <div class="satellite__veil"></div>
+      </div>
+
+      <div class="satellite__content" id="satellite-content">
+        <p class="satellite__eyebrow">Orbital Satellite Network</p>
+        <h2 class="satellite__title" aria-label="Eyes in orbit watching over Earth.">
+          <span class="satellite__title-line">Eyes in orbit</span>
+          <span class="satellite__title-line">Watching over</span>
+          <span class="satellite__title-line">Earth.</span>
+        </h2>
+        <p class="satellite__copy">
+          NASA's fleet of Earth-observing satellites monitors our planet
+          around the clock — tracking weather systems, mapping terrain,
+          measuring ocean currents, and capturing data that shapes our
+          understanding of climate change.
+        </p>
+        <div class="satellite__actions">
+          <a class="button button--primary" href="/">Explore Satellites</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="mission">
+      <div class="mission__media" aria-hidden="true">
+        <video
+          class="mission__video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          poster="./assets/mission/mission-poster.jpg"
+        >
+          <source src="./assets/mission/mission-background.mp4" type="video/mp4" />
+        </video>
+        <div class="mission__veil"></div>
+      </div>
+
+      <div class="mission__content" id="mission-content">
+        <p class="mission__eyebrow">Mars Exploration Program</p>
+        <h2 class="mission__title" aria-label="Roaming the red frontier.">
+          <span class="mission__title-line">Roaming the</span>
+          <span class="mission__title-line">Red frontier.</span>
+        </h2>
+        <p class="mission__copy">
+          From Curiosity to Perseverance, NASA's rovers traverse the Martian
+          landscape searching for signs of ancient life, studying geology,
+          and paving the way for future human exploration of the Red Planet.
+        </p>
+        <div class="mission__actions">
+          <a class="button button--primary" href="/">Discover Missions</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Stats ── -->
+    <section class="stats" id="stats-section">
+      <div class="stats__inner">
+        <p class="stats__eyebrow">By the Numbers</p>
+        <div class="stats__grid">
+          <div class="stats__card">
+            <span class="stats__number" data-target="66">0</span>
+            <span class="stats__unit">Years</span>
+            <span class="stats__label">Of space exploration since 1958</span>
+          </div>
+          <div class="stats__card">
+            <span class="stats__number" data-target="200">0</span>
+            <span class="stats__unit">+</span>
+            <span class="stats__label">Crewed missions launched</span>
+          </div>
+          <div class="stats__card">
+            <span class="stats__number" data-target="27">0</span>
+            <span class="stats__unit">Billion</span>
+            <span class="stats__label">Dollar annual budget</span>
+          </div>
+          <div class="stats__card">
+            <span class="stats__number" data-target="18000">0</span>
+            <span class="stats__unit">+</span>
+            <span class="stats__label">Employees across 10 centers</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── About ── -->
+    <section class="about" id="about-section">
+      <div class="about__inner">
+        <div class="about__text">
+          <p class="about__eyebrow">About NASA</p>
+          <h2 class="about__title">Pioneering the future in space exploration, scientific discovery, and aeronautics research.</h2>
+          <p class="about__copy">
+            The National Aeronautics and Space Administration was established in 1958 with a
+            distinctly civilian orientation, encouraging peaceful applications in space science.
+            Since then, NASA has led the charge in understanding our universe — from placing
+            the first humans on the Moon during the Apollo program to operating the International
+            Space Station, the largest structure ever built in orbit.
+          </p>
+          <p class="about__copy">
+            Today, NASA is pushing the boundaries of what's possible with the Artemis program,
+            aiming to return humans to the lunar surface and eventually send astronauts to Mars.
+            Through its missions, research, and technology development, NASA continues to inspire
+            the world and drive innovation that benefits life on Earth.
+          </p>
+        </div>
+        <div class="about__aside">
+          <div class="about__fact">
+            <span class="about__fact-icon">&#9789;</span>
+            <h3>Moon &amp; Beyond</h3>
+            <p>The Artemis program will land the first woman and first person of color on the Moon, building a long-term presence for deep space missions.</p>
+          </div>
+          <div class="about__fact">
+            <span class="about__fact-icon">&#9788;</span>
+            <h3>Sun &amp; Heliosphere</h3>
+            <p>Parker Solar Probe has become the closest human-made object to the Sun, traveling at speeds exceeding 430,000 mph.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Programs ── -->
+    <section class="programs" id="programs-section">
+      <div class="programs__inner">
+        <p class="programs__eyebrow">Key Programs</p>
+        <h2 class="programs__title">Exploring on every frontier</h2>
+        <div class="programs__grid">
+          <article class="program-card program-card--artemis">
+            <span class="program-card__tag">Lunar Gateway</span>
+            <h3 class="program-card__name">Artemis</h3>
+            <p class="program-card__desc">Returning humans to the Moon and establishing a sustainable presence for future Mars missions.</p>
+          </article>
+          <article class="program-card program-card--jwst">
+            <span class="program-card__tag">Deep Observatory</span>
+            <h3 class="program-card__name">James Webb Space Telescope</h3>
+            <p class="program-card__desc">Peering into the earliest epochs of the universe with the most powerful space telescope ever built.</p>
+          </article>
+          <article class="program-card program-card--iss">
+            <span class="program-card__tag">Orbital Lab</span>
+            <h3 class="program-card__name">International Space Station</h3>
+            <p class="program-card__desc">A microgravity laboratory orbiting Earth, enabling scientific breakthroughs and international cooperation.</p>
+          </article>
+          <article class="program-card program-card--sls">
+            <span class="program-card__tag">Heavy Lift</span>
+            <h3 class="program-card__name">Space Launch System</h3>
+            <p class="program-card__desc">The most powerful rocket ever built, designed to carry crew and cargo beyond low-Earth orbit.</p>
+          </article>
+          <article class="program-card program-card--earth">
+            <span class="program-card__tag">Planetary Data</span>
+            <h3 class="program-card__name">Earth Science</h3>
+            <p class="program-card__desc">A fleet of satellites studying climate, weather, natural disasters, and the changing landscape of our planet.</p>
+          </article>
+          <article class="program-card program-card--crew">
+            <span class="program-card__tag">Low-Earth Transit</span>
+            <h3 class="program-card__name">Commercial Crew</h3>
+            <p class="program-card__desc">Partnering with private industry to ferry astronauts to the ISS and enable a thriving low-Earth orbit economy.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 360 Viewer ── -->
+    <section class="orbit360" id="orbit360-section">
+      <div class="orbit360__inner">
+        <div class="orbit360__text">
+          <p class="orbit360__eyebrow"></p>
+          <h2 class="orbit360__title">
+            <span class="orbit360__title-line">Scroll over</span>
+            <span class="orbit360__title-line">the astronaut</span>
+            <span class="orbit360__title-line">to experience</span>
+            <span class="orbit360__title-line">an astronaut's</span>
+            <span class="orbit360__title-line">view.</span>
+          </h2>
+          <p class="orbit360__copy">
+            
+          </p>
+          <p class="orbit360__hint">&larr; Hover &amp; move &rarr;</p>
+        </div>
+        <div class="orbit360__viewer">
+          <div class="orbit360__viewport">
+            <canvas
+              id="orbit360-canvas"
+              class="orbit360__canvas"
+              width="1600"
+              height="900"
+              aria-label="Astronaut 360 degree viewer"
+              role="img"
+            ></canvas>
+          <div class="orbit360__status" id="orbit360-status"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="cta" id="cta-section">
+      <div class="cta__inner">
+        <p class="cta__eyebrow">Stay Connected</p>
+        <h2 class="cta__title">Follow humanity's next giant leap.</h2>
+        <p class="cta__copy">Get the latest updates on missions, discoveries, and breakthroughs delivered straight to your inbox.</p>
+        <form class="cta__form" onsubmit="event.preventDefault()">
+          <input class="cta__input" type="email" placeholder="Enter your email" aria-label="Email address" required />
+          <button class="button button--primary cta__submit" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ── Footer ── -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <p class="footer__logo">NASA</p>
+          <p class="footer__tagline">National Aeronautics and Space Administration</p>
+        </div>
+        <nav class="footer__nav">
+          <div class="footer__col">
+            <h4 class="footer__heading">Explore</h4>
+            <ul class="footer__links">
+              <li><a href="/">Missions</a></li>
+              <li><a href="/">Discoveries</a></li>
+              <li><a href="/">Technology</a></li>
+              <li><a href="/">Aeronautics</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__heading">Learn</h4>
+            <ul class="footer__links">
+              <li><a href="/">For Students</a></li>
+              <li><a href="/">For Educators</a></li>
+              <li><a href="/">STEM Engagement</a></li>
+              <li><a href="/">Image Gallery</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__heading">About</h4>
+            <ul class="footer__links">
+              <li><a href="/">Organization</a></li>
+              <li><a href="/">Leadership</a></li>
+              <li><a href="/">Careers</a></li>
+              <li><a href="/">Contact NASA</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__heading">Follow</h4>
+            <ul class="footer__links">
+              <li><a href="/">X / Twitter</a></li>
+              <li><a href="/">Instagram</a></li>
+              <li><a href="/">YouTube</a></li>
+              <li><a href="/">Facebook</a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class="footer__bottom">
+          <p>&copy; 2026 NASA. All rights reserved.</p>
+          <p>
+            <a href="/">Privacy Policy</a>
+            <span class="footer__dot">&middot;</span>
+            <a href="/">Accessibility</a>
+            <span class="footer__dot">&middot;</span>
+            <a href="/">FOIA</a>
+            <span class="footer__dot">&middot;</span>
+            <a href="/">No Fear Act</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function revealAfterDelay(element, className, delayMs) {
+        window.setTimeout(() => {
+          element.classList.add(className);
+        }, delayMs);
+      }
+
+      /* ── Stacking cards scroll effect ── */
+      (function initStackingScroll() {
+        var panels = Array.prototype.slice.call(
+          document.querySelectorAll(".hero, .satellite, .mission")
+        );
+        if (!panels.length) return;
+
+        var cached = [];
+        var vh = window.innerHeight;
+        var prefersReduced =
+          window.matchMedia &&
+          window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function cacheLayout() {
+          vh = window.innerHeight;
+          cached = panels.map(function (p) {
+            return { el: p, top: p.offsetTop, height: p.offsetHeight };
+          });
+        }
+
+        function update() {
+          if (prefersReduced) return;
+          var scrollY = window.scrollY;
+
+          cached.forEach(function (data) {
+            var scrollPast = scrollY - data.top;
+
+            if (scrollPast <= 0) {
+              data.el.style.transform = "";
+              data.el.style.opacity = "";
+              data.el.style.borderRadius = "";
+              return;
+            }
+
+            var progress = Math.min(scrollPast / data.height, 1);
+            var easeScale = progress * progress;
+            var easeOpacity = Math.pow(progress, 1.5);
+
+            var scale = 1 - easeScale * 0.1;
+            var opacity = 1 - easeOpacity;
+            var radius = easeScale * 32;
+
+            data.el.style.transform = "scale(" + scale + ")";
+            data.el.style.opacity = opacity;
+            data.el.style.borderRadius = radius + "px";
+          });
+        }
+
+        cacheLayout();
+
+        var ticking = false;
+        window.addEventListener(
+          "scroll",
+          function () {
+            if (!ticking) {
+              requestAnimationFrame(function () {
+                update();
+                ticking = false;
+              });
+              ticking = true;
+            }
+          },
+          { passive: true }
+        );
+
+        window.addEventListener("resize", function () {
+          cacheLayout();
+          update();
+        });
+
+        update();
+      })();
+
+      /* ── Content reveal animations ── */
+      window.addEventListener("load", function () {
+        function initOrbit360Viewer() {
+          var canvas = document.getElementById("orbit360-canvas");
+          var statusEl = document.getElementById("orbit360-status");
+          if (!canvas || !statusEl) return;
+
+          var ctx = canvas.getContext("2d");
+          if (!ctx) return;
+
+          var FRAME_COUNT = 120;
+          var FRAME_DIGITS = 6;
+          var FRAME_PREFIX = "./astronaut-360_frames_60fps/astronaut-360_frames_60fps/frame_";
+          var FRAME_SUFFIX = ".jpg";
+
+          var images = new Array(FRAME_COUNT);
+          var loaded = 0;
+          var hasFirstFrame = false;
+          var animId = null;
+          var targetFrame = 0;
+          var currentFrame = 0;
+          var lastDrawnIndex = -1;
+
+          function wrap(v, n) { return ((v % n) + n) % n; }
+
+          function getFrameSrc(index) {
+            return FRAME_PREFIX + String(index).padStart(FRAME_DIGITS, "0") + FRAME_SUFFIX;
+          }
+
+          function drawCover(img) {
+            var cw = canvas.width;
+            var ch = canvas.height;
+            var ir = img.naturalWidth / img.naturalHeight;
+            var cr = cw / ch;
+            var dw, dh, ox, oy;
+            if (ir > cr) {
+              dh = ch; dw = dh * ir; ox = (cw - dw) / 2; oy = 0;
+            } else {
+              dw = cw; dh = dw / ir; ox = 0; oy = (ch - dh) / 2;
+            }
+            ctx.clearRect(0, 0, cw, ch);
+            ctx.drawImage(img, ox, oy, dw, dh);
+          }
+
+          function syncCanvasSize() {
+            var dpr = window.devicePixelRatio || 1;
+            var rect = canvas.getBoundingClientRect();
+            var w = Math.max(1, Math.round(rect.width * dpr));
+            var h = Math.max(1, Math.round(rect.height * dpr));
+            if (canvas.width !== w || canvas.height !== h) {
+              canvas.width = w;
+              canvas.height = h;
+              lastDrawnIndex = -1;
+            }
+          }
+
+          function renderLoop() {
+            var delta = targetFrame - currentFrame;
+
+            if (Math.abs(delta) > FRAME_COUNT / 2) {
+              delta = delta > 0 ? delta - FRAME_COUNT : delta + FRAME_COUNT;
+            }
+
+            if (Math.abs(delta) < 0.05) {
+              currentFrame = targetFrame;
+            } else {
+              currentFrame += delta * 0.15;
+            }
+
+            var idx = wrap(Math.round(currentFrame), FRAME_COUNT);
+            if (idx !== lastDrawnIndex) {
+              var img = images[idx];
+              if (img && img.complete && img.naturalWidth > 0) {
+                drawCover(img);
+                lastDrawnIndex = idx;
+              }
+            }
+
+            if (Math.abs(targetFrame - currentFrame) > 0.02 || lastDrawnIndex === -1) {
+              animId = requestAnimationFrame(renderLoop);
+            } else {
+              animId = null;
+            }
+          }
+
+          function scheduleRender() {
+            if (!animId && hasFirstFrame) {
+              animId = requestAnimationFrame(renderLoop);
+            }
+          }
+
+          function drawFirstFrame() {
+            targetFrame = 0;
+            currentFrame = 0;
+            scheduleRender();
+          }
+
+          /* ── Hover: cursor X over canvas maps to frame ── */
+          canvas.addEventListener("mousemove", function (e) {
+            if (!hasFirstFrame) return;
+            var rect = canvas.getBoundingClientRect();
+            var x = e.clientX - rect.left;
+            var progress = x / rect.width;
+            targetFrame = progress * (FRAME_COUNT - 1);
+            scheduleRender();
+          });
+
+          /* ── Touch: finger X over canvas maps to frame ── */
+          canvas.addEventListener("touchmove", function (e) {
+            if (!hasFirstFrame) return;
+            var touch = e.touches[0];
+            var rect = canvas.getBoundingClientRect();
+            var x = touch.clientX - rect.left;
+            var progress = x / rect.width;
+            targetFrame = progress * (FRAME_COUNT - 1);
+            scheduleRender();
+          }, { passive: true });
+
+          window.addEventListener("resize", function () {
+            syncCanvasSize();
+            scheduleRender();
+          });
+
+          /* ── Preload frames in batches ── */
+          function preloadFrames() {
+            var batchSize = 10;
+            var queue = [];
+            for (var i = 0; i < FRAME_COUNT; i++) queue.push(i);
+
+            function loadBatch() {
+              var batch = queue.splice(0, batchSize);
+              if (!batch.length) return;
+              batch.forEach(function (idx) {
+                var img = new Image();
+                img.decoding = "async";
+                img.src = getFrameSrc(idx);
+                img.onload = function () {
+                  images[idx] = img;
+                  loaded++;
+                  if (!hasFirstFrame) {
+                    hasFirstFrame = true;
+                    syncCanvasSize();
+                    drawFirstFrame();
+                  }
+                  if (loaded % batchSize === 0 || loaded === FRAME_COUNT) {
+                    loadBatch();
+                  }
+                };
+                img.onerror = function () {
+                  loaded++;
+                  if (loaded % batchSize === 0) loadBatch();
+                };
+              });
+            }
+
+            loadBatch();
+          }
+
+          syncCanvasSize();
+          preloadFrames();
+        }
+
+        var programsGrid = document.querySelector(".programs__grid");
+        if (programsGrid) {
+          programsGrid.addEventListener(
+            "wheel",
+            function (event) {
+              var shouldScrollHorizontally =
+                Math.abs(event.deltaY) > Math.abs(event.deltaX);
+              if (!shouldScrollHorizontally) return;
+
+              var maxScrollLeft =
+                programsGrid.scrollWidth - programsGrid.clientWidth;
+              if (maxScrollLeft <= 0) return;
+
+              event.preventDefault();
+              programsGrid.scrollBy({
+                left: event.deltaY,
+                behavior: "smooth",
+              });
+            },
+            { passive: false }
+          );
+        }
+
+        var heroContent = document.getElementById("hero-content");
+        if (heroContent) {
+          revealAfterDelay(heroContent, "hero__content--revealed", 4000);
+        }
+
+        function observeReveal(id, revealClass) {
+          var el = document.getElementById(id);
+          if (!el) return;
+          var obs = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  revealAfterDelay(el, revealClass, 3000);
+                  obs.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.15 }
+          );
+          obs.observe(el);
+        }
+
+        observeReveal("satellite-content", "satellite__content--revealed");
+        observeReveal("mission-content", "mission__content--revealed");
+
+        function observeFade(selector) {
+          document.querySelectorAll(selector).forEach(function (el) {
+            var obs = new IntersectionObserver(
+              function (entries) {
+                entries.forEach(function (entry) {
+                  if (entry.isIntersecting) {
+                    entry.target.classList.add("revealed");
+                    obs.unobserve(entry.target);
+                  }
+                });
+              },
+              { threshold: 0.12 }
+            );
+            obs.observe(el);
+          });
+        }
+
+        observeFade(".stats");
+        observeFade(".about");
+        observeFade(".programs");
+        observeFade(".orbit360");
+        observeFade(".cta");
+
+        var statsSection = document.getElementById("stats-section");
+        if (statsSection) {
+          var counted = false;
+          var countObs = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting && !counted) {
+                  counted = true;
+                  document
+                    .querySelectorAll(".stats__number")
+                    .forEach(function (el) {
+                      var target = parseInt(el.dataset.target, 10);
+                      var duration = 2000;
+                      var start = performance.now();
+                      function tick(now) {
+                        var elapsed = now - start;
+                        var progress = Math.min(elapsed / duration, 1);
+                        var eased = 1 - Math.pow(1 - progress, 3);
+                        el.textContent = Math.round(
+                          target * eased
+                        ).toLocaleString();
+                        if (progress < 1) requestAnimationFrame(tick);
+                      }
+                      requestAnimationFrame(tick);
+                    });
+                  countObs.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.25 }
+          );
+          countObs.observe(statsSection);
+        }
+
+        initOrbit360Viewer();
+      });
+    </script>
+  </body>
+</html>
