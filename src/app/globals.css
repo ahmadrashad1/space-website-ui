@@ -192,6 +192,19 @@ body {
     linear-gradient(135deg, rgba(1, 4, 10, 0.88), rgba(3, 7, 16, 0.25) 48%, rgba(4, 8, 16, 0.78));
 }
 
+.satellite--scroll-locked {
+  position: relative;
+  min-height: 300vh;
+  overflow: visible;
+}
+
+.satellite__sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
 .satellite__media, .satellite__video, .satellite__veil {
   position: absolute; inset: 0; width: 100%; height: 100%;
 }
@@ -208,9 +221,9 @@ body {
 }
 
 .satellite__content {
-  position: relative; z-index: 1; display: grid; align-content: center;
+  position: relative; z-index: 1; display: grid; align-content: start;
   min-height: 100vh; width: min(100%, 1360px); margin-inline: auto;
-  padding-top: clamp(5.5rem, 10vh, 8rem); padding-right: clamp(1.5rem, 6vw, 6.5rem);
+  padding-top: clamp(5.5rem, 12vh, 10rem); padding-right: clamp(1.5rem, 6vw, 6.5rem);
   padding-bottom: clamp(2rem, 5vh, 3.25rem); padding-left: 50%; text-align: right;
 }
 
@@ -223,7 +236,7 @@ body {
 .satellite__title {
   max-width: 14ch; margin-top: 0; margin-bottom: 0;
   font-family: var(--font-orbitron), "Orbitron", sans-serif;
-  font-size: clamp(3rem, 7vw, 6.4rem); line-height: 0.94;
+  font-size: clamp(2.2rem, 5vw, 4.4rem); line-height: 0.96;
   letter-spacing: -0.04em; text-transform: uppercase;
 }
 
@@ -237,27 +250,21 @@ body {
   gap: 1rem; margin-top: 1.7rem;
 }
 
-/* Satellite reveal */
+/* Satellite scroll-driven reveal */
 .satellite__eyebrow, .satellite__copy, .satellite__actions {
   opacity: 0; transform: translateY(28px); filter: blur(10px);
-  transition: opacity 900ms ease, transform 900ms cubic-bezier(0.22, 1, 0.36, 1), filter 900ms ease;
+  transition: opacity 700ms ease, transform 700ms cubic-bezier(0.22, 1, 0.36, 1), filter 700ms ease;
 }
 .satellite__title-line {
   display: block; opacity: 0; transform: translateY(28px); filter: blur(10px);
-  transition: opacity 900ms ease, transform 900ms cubic-bezier(0.22, 1, 0.36, 1), filter 900ms ease;
+  transition: opacity 700ms ease, transform 700ms cubic-bezier(0.22, 1, 0.36, 1), filter 700ms ease;
 }
-.satellite__content--revealed .satellite__eyebrow,
-.satellite__content--revealed .satellite__copy,
-.satellite__content--revealed .satellite__actions,
-.satellite__content--revealed .satellite__title-line {
+.satellite__eyebrow.is-visible,
+.satellite__copy.is-visible,
+.satellite__actions.is-visible,
+.satellite__title-line.is-visible {
   opacity: 1; transform: translateY(0); filter: blur(0);
 }
-.satellite__content--revealed .satellite__eyebrow { transition-delay: 0ms; }
-.satellite__content--revealed .satellite__title-line:nth-child(1) { transition-delay: 180ms; }
-.satellite__content--revealed .satellite__title-line:nth-child(2) { transition-delay: 380ms; }
-.satellite__content--revealed .satellite__title-line:nth-child(3) { transition-delay: 580ms; }
-.satellite__content--revealed .satellite__copy { transition-delay: 780ms; }
-.satellite__content--revealed .satellite__actions { transition-delay: 980ms; }
 
 /* ───────────────────────── Mission ───────────────────────── */
 
@@ -267,6 +274,19 @@ body {
   background:
     radial-gradient(circle at 22% 40%, rgba(255, 140, 50, 0.1), transparent 36%),
     linear-gradient(135deg, rgba(1, 4, 10, 0.88), rgba(3, 7, 16, 0.25) 48%, rgba(4, 8, 16, 0.78));
+}
+
+.mission--scroll-locked {
+  position: relative;
+  min-height: 300vh;
+  overflow: visible;
+}
+
+.mission__sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .mission__media, .mission__video, .mission__veil {
@@ -299,7 +319,7 @@ body {
 .mission__title {
   width: min(14ch, 100%); margin: 0;
   font-family: var(--font-orbitron), "Orbitron", sans-serif;
-  font-size: clamp(3rem, 7vw, 6.4rem); line-height: 0.94;
+  font-size: clamp(2.6rem, 6vw, 5.2rem); line-height: 0.95;
   letter-spacing: -0.04em; text-transform: uppercase;
 }
 
@@ -312,30 +332,25 @@ body {
   display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.7rem;
 }
 
-/* Mission reveal */
+/* Mission scroll-driven reveal */
 .mission__eyebrow, .mission__copy, .mission__actions {
   opacity: 0; transform: translateY(28px); filter: blur(10px);
-  transition: opacity 900ms ease, transform 900ms cubic-bezier(0.22, 1, 0.36, 1), filter 900ms ease;
+  transition: opacity 700ms ease, transform 700ms cubic-bezier(0.22, 1, 0.36, 1), filter 700ms ease;
 }
 .mission__title-line {
   display: block; opacity: 0; transform: translateY(28px); filter: blur(10px);
-  transition: opacity 900ms ease, transform 900ms cubic-bezier(0.22, 1, 0.36, 1), filter 900ms ease;
+  transition: opacity 700ms ease, transform 700ms cubic-bezier(0.22, 1, 0.36, 1), filter 700ms ease;
 }
-.mission__content--revealed .mission__eyebrow,
-.mission__content--revealed .mission__copy,
-.mission__content--revealed .mission__actions,
-.mission__content--revealed .mission__title-line {
+.mission__eyebrow.is-visible,
+.mission__copy.is-visible,
+.mission__actions.is-visible,
+.mission__title-line.is-visible {
   opacity: 1; transform: translateY(0); filter: blur(0);
 }
-.mission__content--revealed .mission__eyebrow { transition-delay: 0ms; }
-.mission__content--revealed .mission__title-line:nth-child(1) { transition-delay: 180ms; }
-.mission__content--revealed .mission__title-line:nth-child(2) { transition-delay: 380ms; }
-.mission__content--revealed .mission__copy { transition-delay: 580ms; }
-.mission__content--revealed .mission__actions { transition-delay: 780ms; }
 
 /* ───────────────────────── Stacking scroll depth ────────────── */
 
-.satellite, .mission { box-shadow: 0 -30px 80px -10px rgba(0, 0, 0, 0.7); }
+.satellite__sticky, .mission__sticky { box-shadow: 0 -30px 80px -10px rgba(0, 0, 0, 0.7); }
 
 .stats, .about, .programs, .orbit360, .cta, .footer {
   position: relative; z-index: 4;

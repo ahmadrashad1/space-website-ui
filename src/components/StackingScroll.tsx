@@ -5,7 +5,7 @@ import { useEffect } from "react";
 export default function StackingScroll() {
   useEffect(() => {
     const panels = Array.from(
-      document.querySelectorAll<HTMLElement>(".hero, .satellite, .mission")
+      document.querySelectorAll<HTMLElement>(".hero")
     );
     if (!panels.length) return;
 
