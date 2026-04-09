@@ -1,48 +1,11 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
+import { useScrollStageReveal } from "@/hooks/useScrollStageReveal";
 
 export default function Mission() {
   const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const items = Array.from(
-      section.querySelectorAll<HTMLElement>("[data-reveal]")
-    );
-    const total = items.length;
-
-    function update() {
-      const rect = section!.getBoundingClientRect();
-      const scrollable = section!.scrollHeight - window.innerHeight;
-      const scrolled = -rect.top;
-      const progress = Math.max(0, Math.min(1, scrolled / scrollable));
-
-      items.forEach((el, i) => {
-        const threshold = (i + 1) / (total + 1);
-        if (progress >= threshold) {
-          el.classList.add("is-visible");
-        }
-      });
-    }
-
-    let ticking = false;
-    function onScroll() {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          update();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    update();
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  useScrollStageReveal(sectionRef);
 
   return (
     <section className="mission mission--scroll-locked" ref={sectionRef}>
